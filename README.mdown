@@ -29,7 +29,7 @@ Use this method to override the default behaviour:
 Because it's easy to forget to make your staging server just *slightly*
 different from your production box by restricting access to it. Hopefully
 remembering to include this in your `Gemfile` is easier (I'll soon make it
-insert itself automatically into the middleware stack for Rails > 3.x.x apps).
+insert itself automatically into the middleware stack for Rails >= 3.x.x apps).
 
 ## Compatibility
 

@@ -41,9 +41,11 @@ EOF
       end
 
       def unauthorized
-        [ 401, {'Content-Type' => 'text/plain'}, ["Unauthorized"] ]
+        [ 401,
+          {'Content-Type' => 'text/plain',
+           "WWW-Authenticate" => 'Basic realm="staging"' },
+          ["Unauthorized"] ]
       end
-
 
   end
 end

@@ -24,7 +24,7 @@ class RackStagingTest < Test::Unit::TestCase
   end
 
   def test_robots_txt_if_staging
-    header "HOST", "staging.example.org"
+    header "Host", "staging.example.org"
     get "/robots.txt"
     expected = <<-EOF
 User-agent: *
@@ -34,7 +34,7 @@ EOF
   end
 
   def test_requires_authentication_if_staging
-    header "HOST", "staging.example.org"
+    header "Host", "staging.example.org"
     get "/"
     assert_equal 401, last_response.status
   end
@@ -52,11 +52,11 @@ EOF
       use Rack::Staging, Proc.new{|env| env["HTTP_HOST"] =~ /foobar/ }
       run DummyApp.new
     end
-    header "HOST", "staging.example.org"
+    header "Host", "staging.example.org"
     get "/"
     assert_equal 200, last_response.status
 
-    header "HOST", "foobar.org"
+    header "Host", "foobar.org"
     get "/"
     assert_equal 401, last_response.status
   end
@@ -65,7 +65,7 @@ EOF
     ENV["STAGING_USER"] = "top"
     ENV["STAGING_PASS"] = "seecrets"
 
-    header "HOST", "staging.example.org"
+    header "Host", "staging.example.org"
     get "/"
     assert_equal 401, last_response.status
     authorize "top", "seecrets"

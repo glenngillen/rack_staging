@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.version = '0.1.1'
+  s.version = '0.2.0'
   s.name = "rack_staging"
   s.files = ["README.mdown", "Rakefile"]
   s.files += Dir["lib/**/*.rb","test/**/*"]
@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description = "Automatically protects your staging app from web crawlers and casual visitors."
   s.email = "me@glenngillen.com"
   s.homepage = "http://github.com/glenngillen/rack_staging"
-  s.authors = ["Glenn Gillen"]
+  s.authors = ["Glenn Gillen", "Chris Continanza"]
   s.test_files = Dir["test/**/*"]
   s.require_paths = [".", "lib"]
   s.has_rdoc = 'false'

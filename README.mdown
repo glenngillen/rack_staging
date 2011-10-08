@@ -38,6 +38,7 @@ Only tested on Ruby 1.9.2
 ## Contributions
 
 * Glenn Gillen
+* Chris Continanza
 
 ## Status
 

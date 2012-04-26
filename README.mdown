@@ -5,8 +5,17 @@ they're password protected.
 
 ## Usage
 
+Add `rack_staging` to your Gemfile:
+
+    gem 'rack_staging'
+
+or install it locally if not using Gemfile:
+
+    gem install rack_staging
+
 Include the `Rack::Staging` middleware into your `config.ru` like so:
 
+    require 'rack_staging'
     use Rack::Staging
     run MyApp.new
 
@@ -21,6 +30,7 @@ Alternatively `Rack::Staging` accepts a `Proc` as a parameter which will be
 evaluated to determine whether an app is in your staging environment or not.
 Use this method to override the default behaviour:
 
+    require 'rack_staging'
     use Rack::Staging, Proc.new{|env| env["HTTP_HOST"] == "foobar.example.org" }
     run MyApp.new
 
